@@ -2,10 +2,10 @@ console.log("Hello World");
 
 let computerScore = 0;
 let humanScore = 0;
+let roundCount = 3;
 
 const getComputerChoice = () => {
   let choice = Math.random().toFixed(1);
-  console.log(choice);
   return choice < 0.3 ? "Rock" : choice < 0.6 ? "Paper" : "Scissors";
 };
 
@@ -30,7 +30,20 @@ const playRound = (compChoice, playerChoice) => {
   }
 };
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+const playGame = () => {
+  for (let i = 1; i <= roundCount; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(computerSelection, humanSelection));
+  }
 
-console.log(playRound(computerSelection, humanSelection));
+  console.log(`Player Score: ${computerScore}\nComputer Score: ${humanScore}`);
+
+  return humanScore > computerScore
+    ? "Player wins the Game"
+    : humanScore < computerScore
+    ? "Computer wins the Game"
+    : "The Game is a draw";
+};
+
+console.log(playGame());
