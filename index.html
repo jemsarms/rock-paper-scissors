@@ -9,11 +9,26 @@
     </head>
     <body>
         <div class="container">
-            <div class="result-box" aria-placeholder="Result Placeholder"></div>
+            <div class="round-container">Round <span id="currentRound"></span> of <span id="totalRounds"></span></div>
+            <div class="result-container">
+                <div class="result-box" aria-placeholder="Result Placeholder"></div>
+                <div class="userScore-container">
+                    <div class="score-container">
+                        <p>Player:</p>
+                        <p id="playerScore">0</p>
+                    </div>
+                    <div class="score-container">
+                        <p>Computer:</p>
+                        <p id="compScore">0</p>
+                    </div>
+                </div>
+            </div>
             <div class="buttons-box">
-                <button onclick="" class="button-attack" role="button" type="submit">Rock</button>
-                <button onclick="" class="button-attack" role="button" type="submit">Paper</button>
-                <button onclick="" class="button-attack" role="button" type="submit">Scissors</button>
+                <button onclick="playRound('Rock')" class="button-attack" role="button" type="submit">Rock</button>
+                <button onclick="playRound('Paper')" class="button-attack" role="button" type="submit">Paper</button>
+                <button onclick="playRound('Scissors')" class="button-attack" role="button" type="submit">
+                    Scissors
+                </button>
             </div>
         </div>
     </body>
