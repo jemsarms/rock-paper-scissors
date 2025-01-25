@@ -7,8 +7,13 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#gameresult-container {
+    margin-bottom: 1rem;
 }
 
 .container {

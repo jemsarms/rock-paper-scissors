@@ -46,8 +46,10 @@ const playRound = (playerChoice) => {
         //Update Round
         document.querySelector("#currentRound").innerText = playedRounds;
         document.querySelector("#totalRounds").innerText = roundCount;
-    } else {
-        checkRound();
+
+        if (playedRounds === roundCount) {
+            document.querySelector("#gameresult-container").innerText = checkRound();
+        }
     }
 };
 
